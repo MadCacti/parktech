@@ -4,7 +4,7 @@ Table of contents
 <!--ts-->
 * [Credits](#credits)
 * [Runtime Link(when done)](#runtime)
-
+* [Sprint 0 Week 0](#Sprint-0-Week-0)
 
 <!--te-->
 
@@ -29,5 +29,6 @@ Kurtis Kwan | [@Naevey](https://github.com/Naevey) | [Tasks](https://github.com/
 Runtime
 =================
 link to be added
-## Sprint 1 Week 1
 
+Sprint-0-Week-0
+===============

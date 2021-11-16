@@ -1,0 +1,63 @@
+
+{#</html>#}
+{% extends "layouts/base.html" %}
+{% block content %}
+
+<div class="row">
+    <h2 style="text-align: center;">Hello! I'm Raiden and currently am a junior at Del Norte. I enjoy biking, soccer, eating, and spending time with friends.</h2>
+    <img src="https://media.discordapp.net/attachments/644359443311624215/890713494939369492/IMG_3562.jpg"  style="width:362px; height:247px; float:right;"</img>
+    <p>That's me in the bottom row, on the far left.</p>
+    <audio id="nicemusic" src="/static/assets/driftingaway.mp3" preload="metadata" type="audio/mpeg">
+        Your browser does not support the audio element.
+     </audio>
+     <a class="btn" id="nicemusic-btn">play music(its nice trust me :D)</a>
+     <script>
+         var nicemusic = document.getElementById('nicemusic');
+var nicemusicBtn = document.getElementById('nicemusic-btn');
+
+function playPause(song){
+   if (song.paused && song.currentTime >= 0 && !song.ended) {
+      song.play();
+   } else {
+      song.pause();
+   }
+}
+
+function reset(btn, song){
+   if(btn.classList.contains('playing')){
+      btn.classList.toggle('playing');
+   }
+   song.pause();
+   song.currentTime = 0;
+}
+
+function progress(btn, song){
+   setTimeout(function(){
+      var end = song.duration; 
+      var current = song.currentTime;
+      var percent = current/(end/100);
+      //check if song is at the end
+      if(current==end){
+         reset(btn, song);
+      }
+      //set inset box shadow
+      btn.style.boxShadow = "inset " + btn.offsetWidth * (percent/100) + "px 0px 0px 0px rgba(0,0,0,0.125)"
+      //call function again
+      progress(btn, song);     
+   }, 1000);
+}
+
+nicemusicBtn.addEventListener('click', function(){
+    nicemusicBtn.classList.toggle('playing');
+   playPause(nicemusic);
+   progress(nicemusicBtn, nicemusic);
+});
+
+
+     </script>
+    <body style="background-color:lightskyblue"#}></body>
+
+    
+</div>
+
+{% endblock %}

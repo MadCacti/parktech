@@ -21,7 +21,7 @@ Raiden Tung | [@MadCacti](https://github.com/MadCacti) | [Tasks](https://github.
 Paul DiPasquale | [@Paul-D6](https://github.com/Paul-D6) | [Tasks](https://github.com/MadCacti/PARK-tech/issues) | [Scrum Board](https://github.com/MadCacti/PARK-tech/projects/1) | [Commits](https://github.com/MadCacti/PARK-tech/commits/main?author=Paul-D6) 
 Armaan Shamsaasef | [@xXAASXx](https://github.com/cwang999) | [Tasks](https://github.com/MadCacti/PARK-tech/issues) | [Scrum Board](https://github.com/MadCacti/PARK-tech/projects/1) | [Commits](https://github.com/MadCacti/PARK-tech/commits/main?author=cwang999) |
 Kurtis Kwan | [@Naevey](https://github.com/Naevey) | [Tasks](https://github.com/MadCacti/PARK-tech/issues) | [Scrum Board](https://github.com/MadCacti/PARK-tech/projects/1) | [Commits](https://github.com/MadCacti/PARK-tech/commits/main?author=Naevey) | 
-
+Ali Gull | [@sayed123455](https://github.com/sayed123455) | [Tasks](https://github.com/MadCacti/PARK-tech/issues) | [Scrum Board](https://github.com/MadCacti/PARK-tech/projects/1) | [Commits](https://github.com/MadCacti/PARK-tech/commits/main?author=sayed123455) | 
 
 
 

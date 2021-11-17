@@ -40,9 +40,9 @@ def raiden():
 def paul():
     return render_template("profiles/paul.html")
 
-@app.route('/raiden/')
-def raiden():
-    return render_template("profiles/raiden.html")
+@app.route('/armaan/')
+def armaan():
+    return render_template("profiles/armaan.html")
 # runs the application on the development server
 if __name__ == "__main__":
     app.run(debug=True)

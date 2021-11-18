@@ -86,24 +86,40 @@
     </style>
 
     <script>
-        var image = 0
-        function toggle() {
-            if (image === 0) {
+        {#var color = {{ colored|safe }}#}
+        {#var gray = {{ grayed|safe }}#}
+        {#var blur = {{ blurred|safe }}#}
+        {#var imageType = 0;#}
+        {##}
+        {#function grayscale(array) {#}
+        {#    for (let i = 1; i <= array.length; i++) {#}
+        {#        let id = "img" + i;#}
+        {#        setImg(id, array[i-1]);#}
+        {#    }#}
+        {#}#}
+        {##}
+        {#function toggle() {#}
+        {#    if (imageType === 0) {#}
+        {#        grayscale(gray);#}
+        {#        imageType = 1;#}
+        {#    } else {#}
+        {#        grayscale(color);#}
+        {#        imageType = 0;#}
+        {#    }#}
 
-                image = 1;
-            } else {
-
-                image = 0;
-            }
-        }
     </script>
     <div class="row">
         <h2 style="text-align: center; color: white" >Hey, I'm Paul. I am a Junior at Del Norte. I play lacrosse and enjoy listening to music.</h2>
-        <img id="myimage" style="text-align: center;" src="file:///Users/pauldipasquale/Downloads/IMG_8185.jpg"> </image>
-        <button onclick="toggle()" class="glow-on-hover">Change</button>
+{#        <img id="img" style="text-align: center; width: 300px" src="https://ca-times.brightspotcdn.com/dims4/default/48e5315/2147483647/strip/true/crop/1931x1086+0+0/resize/840x472!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F05%2Fe9%2Fd9b03b736e4375029db04c8b518b%2Fsd-1495643843-05js6xc0ym-snap-image"> </image>#}
+{#        <button onclick="toggle()" class="glow-on-hover">Change</button>#}
+        <button class="glow-on-hover" onclick="document.getElementById('myImage').src='https://dejpknyizje2n.cloudfront.net/svgcustom/clipart/preview/full-color-soccer-ball-29608-300x300.png'">Change</button>
+        <button class="glow-on-hover" onclick="document.getElementById('myImage').src='https://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0i0L00000UTMXWQA5/media/catalog/product/u/s/us-toy-tmp-images-catalog-products-g-s-gs39813.jpg'">Change</button>
+
+        <img id="myImage" src="https://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0i0L00000UTMXWQA5/media/catalog/product/u/s/us-toy-tmp-images-catalog-products-g-s-gs39813.jpg" style="width:100px">
+
         <p class="white">Click button to change image to Black and White</p>
         <a href="https://docs.google.com/document/d/1oFeL4nMMEJ1XYFTJkGe01dahlJuVwP_HnVrcs5Kghuw/edit?usp=sharing" style="color: lawngreen; text-align: center">MY JOURNAL!</a>
-        <p class="white">Here is an API for (Will add later)</p>
+        <p class="white">Here is an API</p>
         <table class="center">
             <tr>
                 <th>Data 1</th>

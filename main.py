@@ -43,6 +43,9 @@ def paul():
 @app.route('/armaan/')
 def armaan():
     return render_template("profiles/armaan.html")
+@app.route('/kurtis/')
+def paul():
+    return render_template("profiles/kurtis.html")
 # runs the application on the development server
 if __name__ == "__main__":
     app.run(debug=True)

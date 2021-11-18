@@ -1,6 +1,10 @@
+<!-- Extending the project layout, as this file will do minor customizations -->
 {% extends "layouts/base.html" %}
-{%  block content%}
 
+<!-- Setting up variables to customize "project" details to be specific to walruses -->
+{% set project = "Armaan's" %}
+
+{%  block body %}
 <body style="background-image: url('/static/assets/backgroundocean.jpg'); background-size: 100%">
 <div style="color: white; font-family: 'Times New Roman'; font-size: larger; margin: 2% 10% 0 10%; text-align: center; background-color: rgba(255,0,0,0.5)">
 
@@ -15,6 +19,10 @@
             </div>
         </form>
     </div>
+    <div style="margin: 2% 0 0 0">
+        Hello, {{ name }}! I hope you are having a wonderful day.
+    </div>
+
     <img src="/static/assets/armaan.jpeg" style="height: 300px; margin: 2%; border: 5px solid white;" alt="Armaan's Photo">
 
     <p style="padding: 3%">
@@ -28,17 +36,17 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th>Data 1</th>
-                    <th>Data 2</th>
-                    <th>Data 3</th>
+                    <th>Meta Data</th>
+                    <th>Image</th>
+                    <th>RGB</th>
                 </tr>
                 </thead>
                 <tbody>
 
                 <tr>
                     <td>
-                        <div>API 1</div>
-
+                        <div>armaan.jpg</div>
+                        <div>JPEG</div>
                     </td>
                     <td>
 
@@ -49,7 +57,7 @@
                             <table class="table">
                                 <thead>
                                 <tr>
-                                    <div>API 2</div>
+                                    <div>RGB</div>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -59,4 +67,6 @@
 
 
 </body>
+{% endblock %}
+{% block background %}
 {% endblock %}

@@ -8,6 +8,21 @@
 <body style="background-image: url('/static/assets/backgroundocean.jpg'); background-size: 100%">
 <div style="color: white; font-family: 'Times New Roman'; font-size: larger; margin: 2% 10% 0 10%; text-align: center; background-color: rgba(255,0,0,0.5)">
 
+    <div>
+        <form action="/armaan/" id="armaan" method="POST" >
+            <div>
+                <label for="name" style="padding-top: 2%">What is your name? </label>
+            </div>
+            <div style="padding: 0 0 1% 0">
+                <input name="name" id="name">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+    <div style="margin: 2% 0 0 0">
+        Hello, {{ name }}! I hope you are having a wonderful day.
+    </div>
+
     <img src="/static/assets/armaan.jpeg" style="height: 300px; margin: 2%; border: 5px solid white;" alt="Armaan's Photo">
 
     <p style="padding: 3%">
@@ -54,4 +69,4 @@
 </body>
 {% endblock %}
 {% block background %}
-{% endblock %}https://github.comhhttps://github.com/MadCacti/PARK-tech.githttps://github.com/MadCacti/PARK-tech.gitttps://github.com/MadCacti/PARK-tech.git/MadCacti/PARK-tech.git
+{% endblock %}

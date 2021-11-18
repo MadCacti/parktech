@@ -1,4 +1,6 @@
 # import "packages" from flask
+import json
+
 from flask import Flask, render_template, request
 # from newsapi.newsapi_client import NewsApiClient
 import requests
@@ -29,7 +31,16 @@ def armaan():
 
 @app.route('/kurtis/')
 def kurtis():
-    return render_template("profiles/kurtis.html")
+
+    url = "https://trivia-by-api-ninjas.p.rapidapi.com/v1/trivia"
+    querystring = {"limit":"1"}
+    headers = {
+        'x-rapidapi-host': "trivia-by-api-ninjas.p.rapidapi.com",
+        'x-rapidapi-key': "6279ac9b7amsh7dc015c7d7746fbp1f4d65jsn125b0c500438"
+    }
+    response = requests.request("GET", url, headers=headers, params=querystring)
+    output = json.loads(response.text)
+    return render_template("profiles/kurtis.html", question=output)
 # runs the application on the development server
 
 

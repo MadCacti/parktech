@@ -1,5 +1,6 @@
 # import "packages" from flask
 from flask import Flask, render_template, request
+# from newsapi.newsapi_client import NewsApiClient
 import requests
 # create a Flask instance
 app = Flask(__name__)
@@ -30,10 +31,6 @@ def armaan():
 def kurtis():
     return render_template("profiles/kurtis.html")
 # runs the application on the development server
-
-@app.route('/API/')
-def API():
-    return render_template("profiles/API.html")
 
 
 if __name__ == "__main__":

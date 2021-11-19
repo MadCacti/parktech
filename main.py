@@ -27,6 +27,11 @@ def armaan():
     return render_template("profiles/armaan.html")
 
 
+@app.route('/API/')
+def API():
+    return render_template("profiles/API.html")
+
+
 @app.route('/kurtis/')
 def kurtis():
     return render_template("profiles/kurtis.html")

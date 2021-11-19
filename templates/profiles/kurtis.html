@@ -3,7 +3,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <style>
-
+    .center {
+        text-align: center;
+        color: white;
+    }
 </style>
 <head>
     <script>
@@ -23,17 +26,17 @@
 </head>
 <body style="background-color:#0059a9;">
 
-<h2 style="text-align: center;"> Hi, I'm Kurtis, a junior at Del Norte. I enjoy playing tennis. </h2>
-<img src="https://cdn.discordapp.com/attachments/717833262432780291/909941316178284584/kurits.png" id="myImg" width="160" height="160">
+<h2 class="center"> Hi, I'm Kurtis, a junior at Del Norte. I enjoy playing tennis. </h2>
+<img src="https://media.discordapp.net/attachments/599674267268808734/911364844891017266/1637356702275.jpg" id="myImg" width="160" height="160">
 <input type="button" onclick="changeImg()" value="Change" />
 <script>
     function changeImg() {
         var image = document.getElementById('myImg');
-        if (image.src.match("https://cdn.discordapp.com/attachments/717833262432780291/909941316178284584/kurits.png")) {
-            image.src = "https://cdn.discordapp.com/attachments/790414660063068181/847209714177540126/image0.jpg";
+        if (image.src.match("https://media.discordapp.net/attachments/599674267268808734/911364844891017266/1637356702275.jpg")) {
+            image.src = "https://media.discordapp.net/attachments/599674267268808734/911365446320676864/1637356851100.jpg";
         }
         else {
-            image.src = "https://cdn.discordapp.com/attachments/717833262432780291/909941316178284584/kurits.png";
+            image.src = "https://media.discordapp.net/attachments/599674267268808734/911364844891017266/1637356702275.jpg";
         }
     }
 </script>
@@ -44,14 +47,14 @@
 
 
     </head>
-    <h1 style="margin-top:25px; font-size: 50px ">Learn Trivia</h1>
+    <h1 style="margin-top:25px; font-size: 50px; color: white ">Learn Trivia</h1>
     <div class="maincontainer">
         {% for topic in question %}
             <div class="questioncontainer">
-                <h3 style="margin-bottom: 25px;font-size: 30px">{{ topic['question']}}?</h3>
+                <h3 style="margin-bottom: 25px;font-size: 30px; color: white">{{ topic['question']}}?</h3>
                 <button class="button" id="toggler" onclick="showAns()" style="margin-bottom: 25px">Show Answer</button>
-                <a class = "button" href="/kurtis/">New Fact</a>
-                <p id="answer" style="display:none;font-size: 20px;  color: #000000">{{ topic['answer'] }}</p>
+                <a class = "button" href="/kurtis/" style="color:white">New Fact</a>
+                <p id="answer" style="display:none;font-size: 20px;  color: #ffffff">{{ topic['answer'] }}</p>
             </div>
         {% endfor %}
     </div>

@@ -1,6 +1,6 @@
 # import "packages" from flask
 from flask import Flask, render_template, request
-from newsapi.newsapi_client import NewsApiClient
+#from newsapi.newsapi_client import NewsApiClient
 import requests
 # create a Flask instance
 app = Flask(__name__)

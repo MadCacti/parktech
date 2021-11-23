@@ -1,14 +1,11 @@
 # import "packages" from flask
 import json
-
 from flask import Flask, render_template, request
-from newsapi.newsapi_client import NewsApiClient
 import requests
 # create a Flask instance
 app = Flask(__name__)
 
 yourAPIKEY = '8169dc4f99474483ab5999bc2c761381'  # write your API key here
-newsapi = NewsApiClient(api_key=yourAPIKEY)
 
 
 # connects default URL to render index.html

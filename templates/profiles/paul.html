@@ -1,6 +1,12 @@
 {#</html>#}
 {% extends "layouts/base.html" %}
 {% block content %}
+    <title> Paul </title>
+    <head>
+        <link
+                                href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+        />
+    </head>
     <body style="background-color: orangered">
     <style>
         table.center {
@@ -86,27 +92,34 @@
     </style>
 
     <script>
-        {#var color = {{ colored|safe }}#}
-        {#var gray = {{ grayed|safe }}#}
-        {#var blur = {{ blurred|safe }}#}
-        {#var imageType = 0;#}
-        {##}
-        {#function grayscale(array) {#}
-        {#    for (let i = 1; i <= array.length; i++) {#}
-        {#        let id = "img" + i;#}
-        {#        setImg(id, array[i-1]);#}
-        {#    }#}
-        {#}#}
-        {##}
-        {#function toggle() {#}
-        {#    if (imageType === 0) {#}
-        {#        grayscale(gray);#}
-        {#        imageType = 1;#}
-        {#    } else {#}
-        {#        grayscale(color);#}
-        {#        imageType = 0;#}
-        {#    }#}
+        const searchFrom = document.querySelector('.search');
+        const input = document.querySelector('.input');
+        const newsList = document.querySelector('.news-list');
 
+        searchFrom.addEventListener('submit', retrieve)
+
+        function retrieve(e){
+            e.preventDefault()
+
+            const apiKey = 'a961ccbc9a8d47a0974302b9596eeccb'
+            let topic = input.value;
+            let url = 'https://newsapi.org/v2/everything?q=' + topic + '&apiKey=' + apiKey;
+            fetch(url).then((res)=>{
+                return res.json()
+            }).then((data)=>{
+                console.log(data)
+                data.articles.forEach(article =>{
+                    let li = document.createElement('li');
+                    let a = document.createElement('a');
+                    a.setAttribute('href', article.url)
+                    a.setAttribute('target', '_blank')
+                    a.textContent = article.title;
+                    li.appendChild(a);
+                    newsList.appendChild(li);
+                })
+            })
+            console.log(topic)
+        }
     </script>
     <div class="row">
         <h2 style="text-align: center; color: white" >Hey, I'm Paul. I am a Junior at Del Norte. I play lacrosse and enjoy listening to music.</h2>
@@ -117,23 +130,52 @@
 
         <img id="myImage" src="https://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0i0L00000UTMXWQA5/media/catalog/product/u/s/us-toy-tmp-images-catalog-products-g-s-gs39813.jpg" style="width:100px">
 
-        <p class="white">Click button to change image to Black and White</p>
+        <p class="white">Click button to change image</p>
         <a href="https://docs.google.com/document/d/1oFeL4nMMEJ1XYFTJkGe01dahlJuVwP_HnVrcs5Kghuw/edit?usp=sharing" style="color: lawngreen; text-align: center">MY JOURNAL!</a>
-        <p class="white">Here is an API</p>
-        <table class="center">
-            <tr>
-                <th>Data 1</th>
-                <th>Data 2</th>
-                <th>Data 3</th>
-            </tr>
-            <tr>
-                <td> </td>
-                <td> </td>
-                <td> </td>
-            </tr>
-        </table>
+        <p class="white">Here is an API for news</p>
     </div>
 
     </body>
+    <form action="/paul/" class="search">
+        <label for="" style="color: white; font-size: xx-large">Get news</label>
+        <label>
+            <input class="input" type="text">
+        </label>
+        <button type="submit">SEARCH!</button>
+    </form>
 
+    <div class="container output">
+        <ul class="news-list"></ul>
+    </div>
+
+    <script>
+        const searchFrom = document.querySelector('.search');
+        const input = document.querySelector('.input');
+        const newsList = document.querySelector('.news-list');
+
+        searchFrom.addEventListener('submit', retrieve)
+
+        function retrieve(e){
+            e.preventDefault()
+
+            const apiKey = 'a961ccbc9a8d47a0974302b9596eeccb'
+            let topic = input.value;
+            let url = 'https://newsapi.org/v2/everything?q=' + topic + '&apiKey=' + apiKey;
+            fetch(url).then((res)=>{
+                return res.json()
+            }).then((data)=>{
+                console.log(data)
+                data.articles.forEach(article =>{
+                    let li = document.createElement('li');
+                    let a = document.createElement('a');
+                    a.setAttribute('href', article.url)
+                    a.setAttribute('target', '_blank')
+                    a.textContent = article.title;
+                    li.appendChild(a);
+                    newsList.appendChild(li);
+                })
+            })
+            console.log(topic)
+        }
+    </script>
 {% endblock %}

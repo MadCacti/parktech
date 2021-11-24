@@ -1,7 +1,6 @@
 # import "packages" from flask
 import json
 from flask import Flask, render_template, request
-import requests
 # create a Flask instance
 app = Flask(__name__)
 

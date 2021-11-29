@@ -1,3 +1,6 @@
+{% extends "layouts/base.html" %}
+
+{%  block content %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +15,7 @@
             crossorigin="anonymous"></script>
     <style type="text/css">
         body {
-            background-color: #2ecc71;
+            background-color: #ac2ecc;
             font-family: source-sans-pro, sans-serif;
         }
         h1 {
@@ -21,30 +24,30 @@
             text-align: center;
             font-weight: 100;
             font-size: 2.8em;
-            color: #ffffff;
+            color: #000000;
         }
         div {
             width: 500px;
             margin: auto;
         }
         .formStyle {
-            background-color: #2ecc71;
+            background-color: #cc2e2e;
             padding: 20px;
             width: 400px;
             margin-bottom: 20px;
             border-bottom-width: 1px;
             border-bottom-style: solid;
-            border-bottom-color: #ecf0f1;
+            border-bottom-color: #ac2ecc;
             border-top-style: none;
             border-right-style: none;
             border-left-style: none;
             font-size: 1em;
             font-weight: 100;
-            color: #ffffff;
+            color: black;
         }
         .formButton {
             float: right;
-            background-color:#ffffff;
+            background-color:#ac2ecc;
             display:inline-block;
             color:#2ecc71;
             font-size:28px;
@@ -56,7 +59,7 @@
         }
         .formButton:hover {
             background-color: #27ae60;
-            color:#ffffff;
+            color:#000000;
         }
         .formButton:active {
             position:relative;
@@ -181,3 +184,5 @@
 
 </body>
 </html>
+
+{% endblock %}

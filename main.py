@@ -1,10 +1,13 @@
 # import "packages" from flask
 import json
 from flask import Flask, render_template, request
+from newsapi.newsapi_client import NewsApiClient
+import requests
 # create a Flask instance
 app = Flask(__name__)
 
 yourAPIKEY = '8169dc4f99474483ab5999bc2c761381'  # write your API key here
+newsapi = NewsApiClient(api_key=yourAPIKEY)
 
 
 # connects default URL to render index.html
@@ -40,6 +43,11 @@ def armaan():
     return render_template("profiles/armaan.html")
 
 
+@app.route('/API/')
+def API():
+    return render_template("profiles/API.html")
+
+
 @app.route('/kurtis/')
 def kurtis():
 
@@ -53,6 +61,7 @@ def kurtis():
     output = json.loads(response.text)
     return render_template("profiles/kurtis.html", question=output)
 # runs the application on the development server
+
 
 
 if __name__ == "__main__":

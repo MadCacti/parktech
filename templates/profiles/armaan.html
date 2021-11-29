@@ -1,70 +1,97 @@
 <!-- Extending the project layout, as this file will do minor customizations -->
 {% extends "layouts/base.html" %}
 
-<!-- Setting up variables to customize "project" details to be specific to walruses -->
-{% set project = "Armaan's" %}
-
 {%  block content %}
-<body style="background-image: url('/static/assets/backgroundocean.jpg'); background-size: 100%">
-<div style="color: white; font-family: 'Times New Roman'; font-size: larger; margin: 2% 10% 0 10%; text-align: center; background-color: rgba(255,0,0,0.5)">
 
-    <div>
-        <form action="/armaan/" id="armaan" method="POST" >
-            <div>
-                <label for="name" style="padding-top: 2%">What is your name? </label>
-            </div>
-            <div style="padding: 0 0 1% 0">
-                <input name="name" id="name">
-                <input type="submit" value="Submit">
-            </div>
-        </form>
-    </div>
-    <div style="margin: 2% 0 0 0">
-        Hello, {{ name }}! I hope you are having a wonderful day.
-    </div>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script><div style="color: white; font-family: 'Times New Roman'; font-size: larger; margin: 2% 10% 0 10%; text-align: center; background-color: rgba(255,0,0,0.5)">
+    <script type="text/javascript">
 
-    <img src="/static/assets/armaan.jpeg" style="height: 300px; margin: 2%; border: 5px solid white;" alt="Armaan's Photo">
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://google-translate1.p.rapidapi.com/language/translate/v2",
+            "method": "POST",
+            "headers": {
+                "x-rapidapi-host": "google-translate1.p.rapidapi.com",
+                "x-rapidapi-key": "b256ce775fmsh9e5a7319b6e6e38p1d5c1fjsnae19e21ba599",
+                "content-type": "application/x-www-form-urlencoded"
+            },
+            "data": {
+                "source": "en",
+                "q": "Welcome to my about ME!",
+                "target": ""
+            }
 
-    <p style="padding: 3%">
+        }
+        $(document).ready(function(){
+            $(".dropdown-item").click(function(e){
+                if($(this).attr("tolang") != 'en'){
+                    settings.data.target = $(this).attr("tolang");
+
+                    fetchTranslation();
+                    $('button').html($(this).html());
+                } else {
+                    updatePlaceholders(settings.data.q);
+                    $('#langSel').html("Translate to");
+                }
+            });
+        });
+        function fetchTranslation(){
+            console.log("Hello");
+            $.ajax(settings).done(function (response) {
+                console.log(response);
+                var translatedText = response.data.translations[0].translatedText;
+                updatePlaceholders1(translatedText);
+
+            });
+        }
+        function updatePlaceholders(updateString){
+            var comp = updateString.split('|')
+            $('form > input').each(function(idx){
+                $(this).prop("placeholder", comp[idx+1].trim() );
+            });
+            $("#formHeading").html(comp[0]);
+        }
+        function updatePlaceholders1(updateString){
+            var comp = updateString.split('|')
+            //$('#langChange').text(comp[0]);
+            document.getElementById("langChange").innerHTML = comp[0];
+        }
+    </script>
+
+    <script>
+        function changeImage() {
+            var image = document.getElementById("image");
+            if (image.src.match("/static/assets/armaan.jpeg")) {
+                image.src = "/static/assets/armaanfootball.jpg";
+            }
+            else {
+                image.src = "/static/assets/armaan.jpeg";
+            }
+        }
+    </script>
+    <img id="image" src="/static/assets/armaan.jpeg" style="height: 300px; margin: 2%; border: 5px solid white;" alt="Armaan's Photo">
+    <button height="200px" width="200px" style="text-align: center" id="button" onclick="changeImage()">Change the picture to me scoring a TOUCHDOWN!!!</button>
+
+    <h1 style="padding: 3%">
         Hello my name is Armaan Shamsaasef and I am a student of AP Computer Science Principles at Del Norte High School.
-    </p>
-    <div>
-        </form>
+    </h1>
+
+    <div class="btn-group dropright translate">
+        <button id="langSel" type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Translate to
+        </button>
+        <div class="dropdown-menu translate-option">
+            <a class="dropdown-item" href="#" tolang="en">English (default)</a>
+            <a class="dropdown-item" href="#" tolang="it">Italian</a>
+            <a class="dropdown-item" href="#" tolang="es">Spanish</a>
+            <a class="dropdown-item" href="#" tolang="de">German</a>
+        </div>
     </div>
-    <div class="container">
-        <div class="d-flex justify-content-center">
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Meta Data</th>
-                    <th>Image</th>
-                    <th>RGB</th>
-                </tr>
-                </thead>
-                <tbody>
+<h2 id="langChange"> Welcome to my about ME!
+</h2>
 
-                <tr>
-                    <td>
-                        <div>armaan.jpg</div>
-                        <div>JPEG</div>
-                    </td>
-                    <td>
-
-                        <img src="/static/assets/armaan.jpeg" style="height: 300px; margin: 2%; border: 5px solid white;" alt="Greeting" width="270" >
-                    </td>
-                    <td>
-                        <div class="overflow-auto" style="height: 256px">
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <div>RGB</div>
-                                </tr>
-                                </thead>
-                                <tbody>
-
-                            </table>
-                        </div>
-
-
-</body>
 {% endblock %}

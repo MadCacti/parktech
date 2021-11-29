@@ -7,17 +7,61 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script><div style="color: white; font-family: 'Times New Roman'; font-size: larger; margin: 2% 10% 0 10%; text-align: center; background-color: rgba(255,0,0,0.5)">
-    <div class="btn-group dropright translate">
-        <button id="langSel" type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Translate to
-        </button>
-        <div class="dropdown-menu translate-option">
-            <a class="dropdown-item" href="#" tolang="en">English (default)</a>
-            <a class="dropdown-item" href="#" tolang="it">Italian</a>
-            <a class="dropdown-item" href="#" tolang="es">Spanish</a>
-            <a class="dropdown-item" href="#" tolang="de">German</a>
-        </div>
-    </div>
+    <script type="text/javascript">
+
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://google-translate1.p.rapidapi.com/language/translate/v2",
+            "method": "POST",
+            "headers": {
+                "x-rapidapi-host": "google-translate1.p.rapidapi.com",
+                "x-rapidapi-key": "b256ce775fmsh9e5a7319b6e6e38p1d5c1fjsnae19e21ba599",
+                "content-type": "application/x-www-form-urlencoded"
+            },
+            "data": {
+                "source": "en",
+                "q": "Welcome to my about ME!",
+                "target": ""
+            }
+
+        }
+        $(document).ready(function(){
+            $(".dropdown-item").click(function(e){
+                if($(this).attr("tolang") != 'en'){
+                    settings.data.target = $(this).attr("tolang");
+
+                    fetchTranslation();
+                    $('button').html($(this).html());
+                } else {
+                    updatePlaceholders(settings.data.q);
+                    $('#langSel').html("Translate to");
+                }
+            });
+        });
+        function fetchTranslation(){
+            console.log("Hello");
+            $.ajax(settings).done(function (response) {
+                console.log(response);
+                var translatedText = response.data.translations[0].translatedText;
+                updatePlaceholders1(translatedText);
+
+            });
+        }
+        function updatePlaceholders(updateString){
+            var comp = updateString.split('|')
+            $('form > input').each(function(idx){
+                $(this).prop("placeholder", comp[idx+1].trim() );
+            });
+            $("#formHeading").html(comp[0]);
+        }
+        function updatePlaceholders1(updateString){
+            var comp = updateString.split('|')
+            //$('#langChange').text(comp[0]);
+            document.getElementById("langChange").innerHTML = comp[0];
+        }
+    </script>
+
     <script>
         function changeImage() {
             var image = document.getElementById("image");
@@ -35,41 +79,19 @@
     <h1 style="padding: 3%">
         Hello my name is Armaan Shamsaasef and I am a student of AP Computer Science Principles at Del Norte High School.
     </h1>
-    <div class="container">
-        <div class="d-flex justify-content-center">
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Data 1</th>
-                    <th>Data 2</th>
-                    <th>Data 3</th>
-                </tr>
-                </thead>
-                <tbody>
 
-                <tr>
-                    <td>
-                        <div>API</div>
-
-                    </td>
-                    <td>
-
-                        <img src="/static/assets/armaan.jpeg" style="height: 300px; margin: 2%; border: 5px solid white;" alt="Greeting" width="270" >
-                    </td>
-                    <td>
-                        <div class="overflow-auto" style="height: 256px">
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <div>API</div>
-                                </tr>
-                                </thead>
-                                <tbody>
-
-                            </table>
-                        </div>
-
-
-                        </body>
+    <div class="btn-group dropright translate">
+        <button id="langSel" type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Translate to
+        </button>
+        <div class="dropdown-menu translate-option">
+            <a class="dropdown-item" href="#" tolang="en">English (default)</a>
+            <a class="dropdown-item" href="#" tolang="it">Italian</a>
+            <a class="dropdown-item" href="#" tolang="es">Spanish</a>
+            <a class="dropdown-item" href="#" tolang="de">German</a>
+        </div>
+    </div>
+<h2 id="langChange"> Welcome to my about ME!
+</h2>
 
 {% endblock %}

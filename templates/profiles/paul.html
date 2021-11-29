@@ -125,10 +125,9 @@
         <h2 style="text-align: center; color: white" >Hey, I'm Paul. I am a Junior at Del Norte. I play lacrosse and enjoy listening to music.</h2>
 {#        <img id="img" style="text-align: center; width: 300px" src="https://ca-times.brightspotcdn.com/dims4/default/48e5315/2147483647/strip/true/crop/1931x1086+0+0/resize/840x472!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F05%2Fe9%2Fd9b03b736e4375029db04c8b518b%2Fsd-1495643843-05js6xc0ym-snap-image"> </image>#}
 {#        <button onclick="toggle()" class="glow-on-hover">Change</button>#}
-        <button class="glow-on-hover" onclick="document.getElementById('myImage').src='https://dejpknyizje2n.cloudfront.net/svgcustom/clipart/preview/full-color-soccer-ball-29608-300x300.png'">Change</button>
-        <button class="glow-on-hover" onclick="document.getElementById('myImage').src='https://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0i0L00000UTMXWQA5/media/catalog/product/u/s/us-toy-tmp-images-catalog-products-g-s-gs39813.jpg'">Change</button>
+        <button class="glow-on-hover" onclick="changeImg()" >Change</button>
 
-        <img id="myImage" src="https://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0i0L00000UTMXWQA5/media/catalog/product/u/s/us-toy-tmp-images-catalog-products-g-s-gs39813.jpg" style="width:100px">
+        <img id="myImage" src="https://cdn.discordapp.com/attachments/749509501773807677/914976769004691546/LLL.jpg" style="width:100px">
 
         <p class="white">Click button to change image</p>
         <a href="https://docs.google.com/document/d/1oFeL4nMMEJ1XYFTJkGe01dahlJuVwP_HnVrcs5Kghuw/edit?usp=sharing" style="color: lawngreen; text-align: center">MY JOURNAL!</a>
@@ -176,6 +175,15 @@
                 })
             })
             console.log(topic)
+        }
+        function changeImg() {
+            var image = document.getElementById('myImage');
+            if (image.src.match("https://cdn.discordapp.com/attachments/749509501773807677/914976769004691546/LLL.jpg")) {
+                image.src = "https://cdn.discordapp.com/attachments/749509501773807677/914975847994228746/GGGG.jpg";
+            }
+            else {
+                image.src = "https://cdn.discordapp.com/attachments/749509501773807677/914976769004691546/LLL.jpg";
+            }
         }
     </script>
 {% endblock %}

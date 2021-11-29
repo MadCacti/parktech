@@ -1,6 +1,12 @@
 {#</html>#}
 {% extends "layouts/base.html" %}
 {% block content %}
+    <title> Paul </title>
+    <head>
+        <link
+                                href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+        />
+    </head>
     <body style="background-color: orangered">
     <style>
         table.center {
@@ -86,38 +92,90 @@
     </style>
 
     <script>
-        var image = 0
-        function toggle() {
-            if (image === 0) {
+        const searchFrom = document.querySelector('.search');
+        const input = document.querySelector('.input');
+        const newsList = document.querySelector('.news-list');
 
-                image = 1;
-            } else {
+        searchFrom.addEventListener('submit', retrieve)
 
-                image = 0;
-            }
+        function retrieve(e){
+            e.preventDefault()
+
+            const apiKey = 'a961ccbc9a8d47a0974302b9596eeccb'
+            let topic = input.value;
+            let url = 'https://newsapi.org/v2/everything?q=' + topic + '&apiKey=' + apiKey;
+            fetch(url).then((res)=>{
+                return res.json()
+            }).then((data)=>{
+                console.log(data)
+                data.articles.forEach(article =>{
+                    let li = document.createElement('li');
+                    let a = document.createElement('a');
+                    a.setAttribute('href', article.url)
+                    a.setAttribute('target', '_blank')
+                    a.textContent = article.title;
+                    li.appendChild(a);
+                    newsList.appendChild(li);
+                })
+            })
+            console.log(topic)
         }
     </script>
     <div class="row">
         <h2 style="text-align: center; color: white" >Hey, I'm Paul. I am a Junior at Del Norte. I play lacrosse and enjoy listening to music.</h2>
-        <img id="myimage" style="text-align: center;" src="file:///Users/pauldipasquale/Downloads/IMG_8185.jpg"> </image>
-        <button onclick="toggle()" class="glow-on-hover">Change</button>
-        <p class="white">Click button to change image to Black and White</p>
+{#        <img id="img" style="text-align: center; width: 300px" src="https://ca-times.brightspotcdn.com/dims4/default/48e5315/2147483647/strip/true/crop/1931x1086+0+0/resize/840x472!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F05%2Fe9%2Fd9b03b736e4375029db04c8b518b%2Fsd-1495643843-05js6xc0ym-snap-image"> </image>#}
+{#        <button onclick="toggle()" class="glow-on-hover">Change</button>#}
+        <button class="glow-on-hover" onclick="document.getElementById('myImage').src='https://dejpknyizje2n.cloudfront.net/svgcustom/clipart/preview/full-color-soccer-ball-29608-300x300.png'">Change</button>
+        <button class="glow-on-hover" onclick="document.getElementById('myImage').src='https://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0i0L00000UTMXWQA5/media/catalog/product/u/s/us-toy-tmp-images-catalog-products-g-s-gs39813.jpg'">Change</button>
+
+        <img id="myImage" src="https://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0i0L00000UTMXWQA5/media/catalog/product/u/s/us-toy-tmp-images-catalog-products-g-s-gs39813.jpg" style="width:100px">
+
+        <p class="white">Click button to change image</p>
         <a href="https://docs.google.com/document/d/1oFeL4nMMEJ1XYFTJkGe01dahlJuVwP_HnVrcs5Kghuw/edit?usp=sharing" style="color: lawngreen; text-align: center">MY JOURNAL!</a>
-        <p class="white">Here is an API for (Will add later)</p>
-        <table class="center">
-            <tr>
-                <th>Data 1</th>
-                <th>Data 2</th>
-                <th>Data 3</th>
-            </tr>
-            <tr>
-                <td> </td>
-                <td> </td>
-                <td> </td>
-            </tr>
-        </table>
+        <p class="white">Here is an API for news</p>
     </div>
 
     </body>
+    <form action="/paul/" class="search">
+        <label for="" style="color: white; font-size: xx-large">Get news</label>
+        <label>
+            <input class="input" type="text">
+        </label>
+        <button type="submit">SEARCH!</button>
+    </form>
 
+    <div class="container output">
+        <ul class="news-list"></ul>
+    </div>
+
+    <script>
+        const searchFrom = document.querySelector('.search');
+        const input = document.querySelector('.input');
+        const newsList = document.querySelector('.news-list');
+
+        searchFrom.addEventListener('submit', retrieve)
+
+        function retrieve(e){
+            e.preventDefault()
+
+            const apiKey = 'a961ccbc9a8d47a0974302b9596eeccb'
+            let topic = input.value;
+            let url = 'https://newsapi.org/v2/everything?q=' + topic + '&apiKey=' + apiKey;
+            fetch(url).then((res)=>{
+                return res.json()
+            }).then((data)=>{
+                console.log(data)
+                data.articles.forEach(article =>{
+                    let li = document.createElement('li');
+                    let a = document.createElement('a');
+                    a.setAttribute('href', article.url)
+                    a.setAttribute('target', '_blank')
+                    a.textContent = article.title;
+                    li.appendChild(a);
+                    newsList.appendChild(li);
+                })
+            })
+            console.log(topic)
+        }
+    </script>
 {% endblock %}

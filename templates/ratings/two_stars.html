@@ -1,0 +1,106 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+
+<div class="row">
+    <h1 style="text-align: center;">Hi! Welcome to the Forum.</h1>
+</div>
+
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            color: black;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            /*background-color: #dddddd;*/
+            background-color: wheat;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Two Stars</h2>
+
+<table>
+
+
+    <body>
+    <div class="info">
+        <!--input box for enter comment and submit to save comments in web local storage -->
+        <label style="color: black"; for="comment">Why did you select this? How did we satisfy your expectations and how can we improve our work?
+        </label>
+        <input id="comment" type="text"
+               name="Ntext" size="20">
+        <input id="sent" type="submit"
+               value="Send">
+
+        <!--Added button to delete comments from web local storage -->
+        <br>
+        <br>
+        <label style="color: black"; for="comment">Delete your comment:
+        </label>
+
+        <input id="delete" type="submit"
+               value="Delete">
+    </div>
+    <br>
+    <br>
+    <p id="cara" style="color:black">
+    </p>
+    </body>
+    <script>
+        if (typeof(Storage) != "undefined") {
+            //retrieve the comment from web local storage
+            document.getElementById("cara").innerHTML = localStorage.getItem("lastpost_two_stars");
+        }
+        else {
+            document.getElementById("cara").innerHTML = "Sorry, your browser does not support Web Storage...";
+        }
+
+        window.onclick = function(e)
+        {   var id =  e.target.id;
+            if (id === 'sent') //if the send button for enter comment is clicked then do something below.
+            {
+                var txt = document.getElementById('comment').value;  //Get the text from input box for enter comment
+                var dt = new Date();  //Get the date, time when input the comment
+                if( document.getElementById("cara").innerHTML.length == 0 ) //If the comment is empty concatenate the date with comment
+                {
+                    txt = dt + ":" + "<br>" + txt + "<br>";
+                }
+                else  //if the comment is not empty, say, thre is already one comment there, append the new comment to the old ones.
+                {
+                    txt = document.getElementById("cara").innerHTML + dt + ":" + "<br>" + txt + "<br>";
+                }
+
+
+                // Check browser support
+                if (typeof(Storage) != "undefined") {
+                    // Store the comment to the web local storage
+                    localStorage.setItem("lastpost_two_stars", txt );
+                    // Retrieve the stored comment from the web local storage and show it on webpage.
+                    document.getElementById("cara").innerHTML = localStorage.getItem("lastpost_two_stars");
+                }
+                else {
+                    document.getElementById("cara").innerHTML = "Sorry, your browser does not support Web Storage...";
+                }
+            }
+            else if( id == 'delete') //when clicking the delete button, clear the web local storage
+            {
+                // localStorage.clear();
+                localStorage.removeItem("lastpost_two_stars");
+                document.getElementById("cara").innerHTML = localStorage.getItem("lastpost_two_stars");
+            }
+        }
+    </script>
+</body>
+
+{% endblock %}

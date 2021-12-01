@@ -1,0 +1,84 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+
+<div class="row">
+  <h1 style="text-align: center;">Hi! Welcome to the Forum.</h1>
+</div>
+
+<head>
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      color: black;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      /*background-color: #dddddd;*/
+      background-color: wheat;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Please Rate Your Experience</h2>
+
+
+<ul class="navbar-nav">
+  <li class="nav-item navbar-text">
+  <li class="nav-item dropdown navbar-text">
+    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton1" type="button">Stars</a>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <li><a class="dropdown-item" href={{ url_for('five_stars') }}>5 Stars</a></li>
+      <li><a class="dropdown-item" href={{ url_for('four_stars') }}>4 Stars</a></li>
+      <li><a class="dropdown-item" href={{ url_for('three_stars') }}>3 Stars</a></li>
+      <li><a class="dropdown-item" href={{ url_for('two_stars') }}>2 Stars</a></li>
+      <li><a class="dropdown-item" href={{ url_for('one_star') }}>1 Star</a></li>
+    </ul>
+  </li>
+</ul>
+
+
+
+</body>
+
+<body>
+
+<br>
+<br>
+<p id="parrot" style="color:black">
+</p>
+<p id="bara" style="color:black">
+</p>
+<p id="fara" style="color:black">
+</p>
+<p id="cara" style="color:black">
+</p>
+<p id="para" style="color:black">
+</p>
+</body>
+<script>
+  if (typeof(Storage) != "undefined") {
+    //retrieve the comment from web local storage
+    document.getElementById("parrot").innerHTML = "FIVE STAR : " + localStorage.getItem("lastpost_five_stars");
+    document.getElementById("bara").innerHTML = "FOUR STAR : " + localStorage.getItem("lastpost_four_stars");
+    document.getElementById("fara").innerHTML = "THREE STAR : " + localStorage.getItem("lastpost_three_stars");
+    document.getElementById("cara").innerHTML = "TWO STAR : " + localStorage.getItem("lastpost_two_stars");
+    document.getElementById("para").innerHTML = "ONE STAR : " + localStorage.getItem("lastpost_one_star");
+  }
+  else {
+    document.getElementById("para").innerHTML = "Sorry, your browser does not support Web Storage...";
+  }
+  
+</script>
+
+</body>
+
+{% endblock %}

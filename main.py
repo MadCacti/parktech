@@ -63,6 +63,34 @@ def kurtis():
 # runs the application on the development server
 
 
+@app.route('/rating_test/')
+def rating_test():
+    return render_template("ratings/rating_test.html")
+
+
+@app.route('/five_stars/')
+def five_stars():
+    return render_template("ratings/five_stars.html")
+
+
+@app.route('/four_stars/')
+def four_stars():
+    return render_template("ratings/four_stars.html")
+
+
+@app.route('/three_stars/')
+def three_stars():
+    return render_template("ratings/three_stars.html")
+
+
+@app.route('/two_stars/')
+def two_stars():
+    return render_template("ratings/two_stars.html")
+
+
+@app.route('/one_star/')
+def one_star():
+    return render_template("ratings/one_star.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

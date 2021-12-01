@@ -13,6 +13,8 @@ Credits
 
 - [Team Scrum Board](https://github.com/MadCacti/PARK-tech/projects/1)
 - [Team Insight Graphs](https://github.com/MadCacti/PARK-tech/graphs/contributors)
+- - [Wireframes](https://docs.google.com/document/d/1-PmpVyhIylKSlZfV2Y4Texrducdp3OhU1VrLzz_jaAY/edit?usp=sharing)
+
 
 
 Contributor | GitHub | Tasks | Scrum Board | Commit | Journal Links

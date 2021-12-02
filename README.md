@@ -1,6 +1,6 @@
 Table of contents
 =================
-"If it's a team problem. its always a Raiden problem"
+"If it's a team problem its always a Raiden problem"
 <!--ts-->
 * [Credits](#credits)
 * [Runtime Link(when done)](#runtime)

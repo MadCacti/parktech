@@ -26,7 +26,8 @@
         <li class="nav-item">
             <a style="font-size: 20px" class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton1" type="button">About Us</a>
             <ul style="margin-left: 10em" class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href={{ url_for('paul') }}>Paul</a>
+                <li>
+                    <a class="dropdown-item" href={{ url_for('paul') }}>Paul</a>
                     <a class="dropdown-item" href={{ url_for('armaan') }}>Armaan</a>
                     <a class="dropdown-item" href={{ url_for('raiden') }}>Raiden</a>
                     <a class="dropdown-item" href={{ url_for('kurtis') }}>Kurtis</a>
@@ -36,7 +37,7 @@
     </ul>
     <ul style="padding-right: 50px" class="nav navbar-nav navbar-right">
         <li style="padding-right: 40px" class="nav-item">
-            <a style="font-size: 20px" class="nav-link" href={{ url_for('index') }}>Databases</a>
+            <a style="font-size: 20px" class="nav-link" href={{ url_for('databases') }}>Databases</a>
         </li>
         <li style="padding-right: 40px" class="nav-item">
             <a style="font-size: 20px" class="nav-link" href={{ url_for('rating_test') }}>Ratings</a>

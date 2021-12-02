@@ -92,5 +92,9 @@ def two_stars():
 def one_star():
     return render_template("ratings/one_star.html")
 
+@app.route('/databases/')
+def databases():
+    return render_template("Databases/databases.html")
+
 if __name__ == "__main__":
     app.run(debug=True)

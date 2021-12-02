@@ -50,6 +50,7 @@ Week-1
 Commit | Person | Description
 ------ | ------ | -----------
 [Add Review System](https://github.com/MadCacti/PARK-tech/commit/2e4c9ea58a74915323abcd4c7f8379af4b6e0dda) | Raiden | Add a general review system, to be extended per book, etc.
+[About-ME](https://github.com/MadCacti/PARK-tech/commits/main?author=xXAASXx)| Armaan | Completely finished About-Me page with Google Translate API.
 
 
 Week-2

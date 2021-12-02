@@ -4,9 +4,10 @@ Table of contents
 <!--ts-->
 * [Credits](#credits)
 * [Runtime Link(when done)](#runtime)
-* [Sprint 0 Week 0](#Sprint-0-Week-0)
-* [Sprint 1 Week 1](#Sprint-1-Week-1)
-
+* [Week 0](#Week-0)
+* [Week 1](#Week-1)
+* [Week 2](#Week-2)
+* [Week 3](#Week-3)
 <!--te-->
 
 Credits
@@ -26,13 +27,11 @@ Armaan Shamsaasef | [@xXAASXx](https://github.com/xXAASXx) | [Tasks](https://git
 Kurtis Kwan | [@Naevey](https://github.com/Naevey) | [Tasks](https://github.com/MadCacti/PARK-tech/issues) | [Scrum Board](https://github.com/MadCacti/PARK-tech/projects/1) | [Commits](https://github.com/MadCacti/PARK-tech/commits/main?author=Naevey) | [Journal](https://docs.google.com/document/d/10IgexoJxVsm1w9mi2x22ORh4LrgRvdUqF__PXGfAcns/edit?usp=sharing)
 
 
-
-
 Runtime
 =================
 link to be added
 
-Sprint-0-Week-0
+Week-0
 ===============
 Setup roles for team members.
 
@@ -44,10 +43,21 @@ Primary Designer | Armaan | Primary Designer and Layout manager.  Organize Jinja
 Deployment Manager | Paul | (RPi or AWS).  Deploy Web site.  Establish policy and frequency for updates.  Ensure site is not broken and always alive for reviews.
 Technical Officer | Kurtis | Works with Teacher, Classroom TOs, and BOF TO's to form TPT lessons and Tech Talk Topics for Trimester.  Also, facilitates learning of Technical Concepts within Scrum Team.
 
-Sprint-1-Week-1
+Week-1
 ===============
 [Week 1 Issue](https://github.com/MadCacti/PARK-tech/issues/9)
 
 Commit | Person | Description
 ------ | ------ | -----------
 [Add Review System](https://github.com/MadCacti/PARK-tech/commit/2e4c9ea58a74915323abcd4c7f8379af4b6e0dda) | Raiden | Add a general review system, to be extended per book, etc.
+
+
+Week-2
+===============
+[Week 2 Issue](https://github.com/MadCacti/PARK-tech/issues/11)
+
+
+Week-3
+===============
+[Week 3 Issue](https://github.com/MadCacti/PARK-tech/issues/12)
+

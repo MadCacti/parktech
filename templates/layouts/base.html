@@ -10,7 +10,12 @@
     {% block meta %}{% endblock %}
     <style>
         body { height: 100vh; }
-        * { cursor: url(/static/assets/cursor.cur) 0 0, default; }
+        * { cursor: url(/static/assets/smallercursor.cur) 0 0, default; }
+        .nav-link {
+            cursor: pointer;
+        }
+        .text {
+            cursor: text;
     </style>
     <link rel="shortcut icon" href="/static/assets/title.png">
 
@@ -23,7 +28,7 @@
 <nav class="navbar navbar-expand-lg navbar-custom ">
     <ul style="padding-left: 45px" class="nav navbar-nav">
         <li class="nav-item">
-            <a style="font-size: 20px" class="nav-link" href={{ url_for('index') }}>  Home  </a>
+            <a style="font-size: 20px" class="nav-link" href={{ url_for('index') }}>Home</a>
         </li>
     </ul>
     <ul style="padding-left: 40px" class="nav navbar-nav mr-auto">

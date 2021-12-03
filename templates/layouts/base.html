@@ -11,7 +11,7 @@
     <style>
         body { height: 100vh; }
         * { cursor: url(/static/assets/smallercursor.cur) 0 0, default; }
-        .pointer {
+        .nav-link {
             cursor: pointer;
         }
     </style>
@@ -46,7 +46,7 @@
     </ul>
     <ul style="padding-right: 50px" class="nav navbar-nav navbar-right">
         <li style="padding-right: 40px" class="nav-item">
-            <a class="pointer" style="font-size: 20px" class="nav-link" href={{ url_for('search') }}>Search</a>
+            <a style="font-size: 20px" class="nav-link" href={{ url_for('search') }}>Search</a>
         </li>
         <li style="padding-right: 40px" class="nav-item">
             <a style="font-size: 20px" class="nav-link" href={{ url_for('databases') }}>Databases</a>

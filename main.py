@@ -95,6 +95,9 @@ def one_star():
 @app.route('/databases/')
 def databases():
     return render_template("Databases/databases.html")
+@app.route('/search/')
+def search():
+    return render_template("Databases/search.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

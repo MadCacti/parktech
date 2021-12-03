@@ -69,7 +69,12 @@
         Hello my name is Armaan Shamsaasef and I am a student of AP Computer Science Principles at Del Norte High School.
     </h1>
 
-    <h2 style="padding: 3%" class="align-content-center"> Welcome to my About ME! Click the "Translate to" button to complete the Contact Form in a different language.
+    <!--<a href="https://docs.google.com/document/d/1uwR9Io43AmdcRlqFsQuOqaYmvGZwka5Y0TY4xL6RFfc/edit?usp=sharing" style="color: blue; text-align: center">Armaan's JOURNAL!</a>-->
+    <img id="image" src="/static/assets/armaan.jpeg" style="height: 300px; margin: 2%; border: 5px solid #ffffff;" alt="Armaan's Photo">
+    <button height="200px" width="200px" style="text-align: center" id="button" onclick="changeImage()">Change the picture to me scoring a TOUCHDOWN!!!</button>
+
+    <h2 style="text-align: center">
+        Welcome to my About ME! Click the "Translate to" button to complete the Contact Form in a different language.
     </h2>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -91,7 +96,7 @@
             text-align: center;
             font-weight: 100;
             font-size: 2.8em;
-            color: #b517fb;
+            color: #ffffff;
         }
         div {
             width: 500px;
@@ -104,7 +109,7 @@
             margin-bottom: 20px;
             border-bottom-width: 1px;
             border-bottom-style: solid;
-            border-bottom-color: #ad17fb;
+            border-bottom-color: #ffffff;
             border-top-style: none;
             border-right-style: none;
             border-left-style: none;
@@ -151,7 +156,7 @@
         }
         /* To format the placeholder text color */
         ::-webkit-input-placeholder {
-            color: #3d043d;
+            color: #ffffff;
         }
         :-moz-placeholder { /* Firefox 18- */
             color: #218aa4;
@@ -263,10 +268,10 @@
             }
         }
     </script>
-    <a href="https://docs.google.com/document/d/1uwR9Io43AmdcRlqFsQuOqaYmvGZwka5Y0TY4xL6RFfc/edit?usp=sharing" style="color: blue; text-align: center">Armaan's JOURNAL!</a>
-    <img id="image" src="/static/assets/armaan.jpeg" style="height: 300px; margin: 2%; border: 5px solid #44145d;" alt="Armaan's Photo">
-    <button height="200px" width="200px" style="text-align: center" id="button" onclick="changeImage()">Change the picture to me scoring a TOUCHDOWN!!!</button>
+
  </body>
+
+{% endblock %}
     <!--
         <div class="btn-group dropright translate">
             <button id="langSel" type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -282,4 +287,3 @@
     <h2 id="langChange"> Welcome to my About ME!
     </h2>
     -->
-{% endblock %}

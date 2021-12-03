@@ -3,6 +3,7 @@
 
 <!-- Setting up variables to customize "project" details to be specific to index page -->
 {% block content %}
+
     <style>
         body{
             background-image: url("https://wallpaperaccess.com/full/124400.jpg");
@@ -14,7 +15,7 @@
             top: 50%;
             -ms-transform: translateY(-50%);
             transform: translateY(-50%);
-            color: white;
+            color: #bd9d13;
             padding-left: 150px;
             font-size: 80px;
             font-family: "Times New Roman", Times, serif;
@@ -24,5 +25,57 @@
 <div class="row">
     <h1 class="bruh" ><b>PARK-Tech</b></h1>
 </div>
+
+<!--This is a technical that can be worked on to perfection. The goal of this is to create a scroll with the heading to stay in the middle to show our home page. -->
+
+    <style>
+
+        body{
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+    box-sizing: border-box;
+    }
+
+    bg-image {
+    /* Full height */
+    height: 50%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+    /* Images used */
+    img1 { background-image: url("https://wallpaperaccess.com/full/124400.jpg"); }
+    img2 { background-image: url("https://wallpaperaccess.com/full/124400.jpg"); }
+    img3 { background-image: url("https://wallpaperaccess.com/full/124400.jpg"); }
+
+    /* Position text in the middle of the page/image */
+    bg-text {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    font-size: 80px;
+    border: 10px solid #f1f1f1;
+    position: fixed; /* Stay fixed */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    }
+    </style>
+
+    <div class="row">
+        <h1 class="bg-text" ><b>PARK-Tech</b></h1>
+    </div>
 
 {% endblock %}

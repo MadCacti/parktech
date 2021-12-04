@@ -1,10 +1,30 @@
 {% extends "layouts/base.html" %}
 {% block content %}
-    <title> Paul </title>
     <head>
-
+        <meta charset="UTF-8">
+        <title>Search</title>
     </head>
+    <style>
+        .center {
+            margin: auto;
+            position: center;
+            text-align: center;
+            border: 3px solid dodgerblue;
+            padding: 10px;
+            width: 66%;
+        }
+        .title {
+            text-align: center;
+            font-size: x-large;
+        }
+    </style>
     <body>
-    <p>Hola, soy Dora</p>
+    <div style="padding-top: 40px">
+        <p class="title">Type in a book name</p>
+        <div class="center">
+            <img src="https://www.freeiconspng.com/thumbs/search-icon-png/search-icon-png-21.png" style="width: 26px">
+            <input id="search" type="text" name="Ntext" size="75" placeholder="Search">
+        </div>
+    </div>
     </body>
 {% endblock %}

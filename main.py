@@ -97,7 +97,11 @@ def databases():
     return render_template("Databases/databases.html")
 @app.route('/search/')
 def search():
-    return render_template("Databases/search.html")
+    return render_template("search.html")
+
+@app.route('/database1/')
+def database1():
+    return render_template("Databases/database1.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

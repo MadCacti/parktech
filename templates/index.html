@@ -14,31 +14,144 @@
             margin: 0;
             position: absolute;
             top: 50%;
-            -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
-            color: white;
-            padding-left: 150px;
             font-size: 80px;
-            font-family: "Times New Roman", Times, serif;
-
-        }
-        .paragraph {
-
-            margin: 0;
-            position: absolute;
-            top: 60%;
             -ms-transform: translateY(-50%);
             transform: translateY(-50%);
-            color: white;
-            padding-left: 150px;
-            font-size: 25px;
             font-family: "Times New Roman", Times, serif;
+            color: white;
+            display: inline-block;
+            border: none;
+            background-color: inherit;
+            padding-left: 200px;
+        }
+        .bruh:hover {
+            color: gray
+        }
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            -webkit-animation-name: fadeIn; /* Fade in the background */
+            -webkit-animation-duration: 0.4s;
+            animation-name: fadeIn;
+            animation-duration: 0.4s
+        }
+
+        /* Modal Content */
+        .modal-content {
+            position: fixed;
+            bottom: 0;
+            background-color: #fefefe;
+            width: 100%;
+            -webkit-animation-name: slideIn;
+            -webkit-animation-duration: 0.4s;
+            animation-name: slideIn;
+            animation-duration: 0.4s
+        }
+
+        /* The Close Button */
+        .close {
+            color: black;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-header {
+            padding: 2px 16px;
+            background-color: rosybrown;
+            color: white;
+        }
+
+        .modal-body {padding: 2px 16px;}
+
+        .modal-footer {
+            padding: 2px 16px;
+            background-color: rosybrown;
+            color: white;
+        }
+
+        /* Add Animation */
+        @-webkit-keyframes slideIn {
+            from {bottom: -300px; opacity: 0}
+            to {bottom: 0; opacity: 1}
+        }
+
+        @keyframes slideIn {
+            from {bottom: -300px; opacity: 0}
+            to {bottom: 0; opacity: 1}
+        }
+
+        @-webkit-keyframes fadeIn {
+            from {opacity: 0}
+            to {opacity: 1}
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0}
+            to {opacity: 1}
         }
     </style>
-<div class="row">
-    <h1 class="bruh" ><b>PARK-Tech</b></h1>
-    <h2 class="paragraph"><b>A book catalog and information-giving thing</b></h2>
+    <body>
+    <button class="bruh" id="myBtn" ><b>PARK-Tech</b></button>
 
-</div>
+    <div id="myModal" class="modal">
 
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Welcome to Park Tech!</h2>
+            </div>
+            <div class="modal-body">
+                <p>Our Website is used to help YOU find good books you would like to read</p>
+                <p>You can find information by clicking on "Databases"</p>
+            </div>
+            <div class="modal-footer">
+                <h3>Thank you for checking us out!</h3>
+            </div>
+        </div>
+
+    </div>
+    </body>
+<script>
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
 {% endblock %}

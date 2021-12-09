@@ -8,14 +8,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 
     {% block meta %}{% endblock %}
-{#    <style>#}
-{#        body { height: 100vh; }#}
+{#   <style>#}
+{#       body { height: 100vh; }#}
 {#        * { cursor: url(/static/assets/cursor.cur) 0 0, default; }#}
+{#       .nav-link {#}
+{#           cursor: pointer;#}
+{#       }#}
+{#       .text {#}
+{#           cursor: text;#}
 {#    </style>#}
-{#    <link rel="shortcut icon" href="/static/assets/title.png">#}
+    <link rel="shortcut icon" href="/static/assets/title.png">
 
 </head>
-<title>PARK-Home</title>
 <body class="baseNav">
 <!--adds background image-->
 
@@ -40,7 +44,7 @@
                 </li>
             </ul>
         </li>
-    </ul>
+    </ul>npn
     <ul style="padding-right: 50px" class="nav navbar-nav navbar-right">
         <li style="padding-right: 15px" class="nav-item">
             <a style="font-size: 20px" class="nav-link" href={{ url_for('search') }}>Search</a>

@@ -1,13 +1,13 @@
 # import "packages" from flask
-# import json
+import json
 from flask import Flask, render_template, request
-# from newsapi.newsapi_client import NewsApiClient
-# import requests
+from newsapi.newsapi_client import NewsApiClient
+import requests
 # create a Flask instance
 app = Flask(__name__)
 
 yourAPIKEY = '8169dc4f99474483ab5999bc2c761381'  # write your API key here
-# newsapi = NewsApiClient(api_key=yourAPIKEY)
+newsapi = NewsApiClient(api_key=yourAPIKEY)
 
 
 # connects default URL to render index.html
@@ -25,13 +25,13 @@ def raiden():
 def get_results():
     keyword = request.form['keyword']  # getting input from user
 
-    # # news = newsapi.get_top_headlines(q=keyword,
-    #                                  # sources='bbc-news,the-verge',#optional and you can change
-    #                                  # category='business', #optional and you can change also
-    #                                  language='en',  # optional and you can change also
-    #                                  country='in')
-    # # print(news['articles'])
-    # # return render_template('profiles/raiden.html', news=news['articles'])
+    news = newsapi.get_top_headlines(q=keyword,
+                                     # sources='bbc-news,the-verge',#optional and you can change
+                                     # category='business', #optional and you can change also
+                                     language='en',  # optional and you can change also
+                                     country='in')
+    print(news['articles'])
+    return render_template('profiles/raiden.html', news=news['articles'])
 
 @app.route('/paul/')
 def paul():
@@ -57,9 +57,9 @@ def kurtis():
         'x-rapidapi-host': "trivia-by-api-ninjas.p.rapidapi.com",
         'x-rapidapi-key': "6279ac9b7amsh7dc015c7d7746fbp1f4d65jsn125b0c500438"
     }
-    # response = requests.request("GET", url, headers=headers, params=querystring)
-    # output = json.loads(response.text)
-    # return render_template("profiles/kurtis.html", question=output)
+    response = requests.request("GET", url, headers=headers, params=querystring)
+    output = json.loads(response.text)
+    return render_template("profiles/kurtis.html", question=output)
 # runs the application on the development server
 
 
@@ -100,8 +100,8 @@ def search():
     return render_template("search.html")
 
 @app.route('/database1/')
-def database():
+def database1():
     return render_template("Databases/database1.html")
 
-# if __name__ == "__main__":
-#     app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)

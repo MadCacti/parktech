@@ -1,7 +1,7 @@
 # import "packages" from flask
 import json
 from flask import Flask, render_template, request
-from newsapi.newsapi_client import NewsApiClient
+# from newsapi.newsapi_client import NewsApiClient
 import requests
 # create a Flask instance
 app = Flask(__name__)
@@ -100,7 +100,7 @@ def search():
     return render_template("search.html")
 
 @app.route('/database1/')
-def database1():
+def database():
     return render_template("Databases/database1.html")
 
 if __name__ == "__main__":

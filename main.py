@@ -1,7 +1,6 @@
 # import "packages" from flask
 import json
 
-import app as app
 from flask import Flask, render_template, request
 from newsapi.newsapi_client import NewsApiClient
 import requests
@@ -110,7 +109,4 @@ def database1():
 
 if __name__ == "__main__":
     app.run(
-        debug=True,
-        host="0.0.0.0",
-        port=5000
-    ),
+        debug=True)

@@ -1,8 +1,13 @@
 # import "packages" from flask
 import json
+
+import app as app
 from flask import Flask, render_template, request
 from newsapi.newsapi_client import NewsApiClient
 import requests
+# from crud.app_crud import crud.app_crud
+#app.register_blueprint(app_crud)
+
 # create a Flask instance
 app = Flask(__name__)
 

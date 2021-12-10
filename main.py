@@ -3,6 +3,8 @@ import json
 from flask import Flask, render_template, request
 from newsapi.newsapi_client import NewsApiClient
 import requests
+# from crud.app_crud import crud.app_crud
+
 # create a Flask instance
 app = Flask(__name__)
 
@@ -104,4 +106,8 @@ def database1():
     return render_template("Databases/database1.html")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(
+        debug=True,
+        host="0.0.0.0",
+        port=5000
+    ),

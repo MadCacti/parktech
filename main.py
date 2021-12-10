@@ -43,6 +43,7 @@ def armaan():
     return render_template("profiles/armaan.html")
 
 
+
 @app.route('/API/')
 def API():
     return render_template("profiles/API.html")

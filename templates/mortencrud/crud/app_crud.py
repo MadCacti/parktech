@@ -3,7 +3,7 @@ from flask import Blueprint, render_template, request, url_for, redirect, jsonif
 from flask_restful import Api, Resource
 import requests
 
-from app_crud.model import Users
+from crud.model import Users
 
 # blueprint defaults https://flask.palletsprojects.com/en/2.0.x/api/#blueprint-objects
 app_crud = Blueprint('crud', __name__,
@@ -245,7 +245,3 @@ def api_printer():
 if __name__ == "__main__":
     api_tester()
     api_printer()
-
-
-def model():
-    return None

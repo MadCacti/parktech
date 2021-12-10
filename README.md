@@ -58,6 +58,11 @@ Week-2
 ===============
 [Week 2 Issue](https://github.com/MadCacti/PARK-tech/issues/11)
 
+Commit | Person | Description
+------ | ------ | -----------
+Completion of about me pages | All members | Focus on completing this week's goals. Check issue/review tickets for updates.
+
+Focus on deployment with group and management of getting accustomed to commits/pushes to live runtime.
 
 Week-3
 ===============

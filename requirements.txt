@@ -1,1 +1,4 @@
 Flask
+newsapi-python
+newsapi
+firebase_admin

@@ -3,8 +3,11 @@ import json
 from flask import Flask, render_template, request
 from newsapi.newsapi_client import NewsApiClient
 import requests
+import firebase_admin
+from firebase_admin import credentials
 # create a Flask instance
 app = Flask(__name__)
+
 
 yourAPIKEY = '8169dc4f99474483ab5999bc2c761381'  # write your API key here
 newsapi = NewsApiClient(api_key=yourAPIKEY)
@@ -32,6 +35,7 @@ def get_results():
                                      country='in')
     # print(news['articles'])
     return render_template('profiles/raiden.html', news=news['articles'])
+
 
 @app.route('/paul/')
 def paul():
@@ -92,16 +96,36 @@ def two_stars():
 def one_star():
     return render_template("ratings/one_star.html")
 
+
 @app.route('/databases/')
 def databases():
     return render_template("Databases/databases.html")
+
+
 @app.route('/search/')
 def search():
     return render_template("search.html")
 
+
 @app.route('/database1/')
 def database1():
     return render_template("Databases/database1.html")
+
+
+@app.route('/login/', methods=["GET", "POST"])
+def login():
+    return render_template("login.html")
+
+
+@app.route('register')
+def register():
+    return render_template("register.html")
+
+
+@app.route('error')
+def error():
+    return render_template("error.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)

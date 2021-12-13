@@ -1,13 +1,15 @@
 # import "packages" from flask
-import json
 from flask import Flask, render_template, request
 from newsapi.newsapi_client import NewsApiClient
-import requests
+import requests, json
 import firebase_admin
 from firebase_admin import credentials
+from __init__ import app
+from mortencrud.app_crud import app_crud
+app.register_blueprint(app_crud)
+
 # create a Flask instance
 app = Flask(__name__)
-
 
 yourAPIKEY = '8169dc4f99474483ab5999bc2c761381'  # write your API key here
 newsapi = NewsApiClient(api_key=yourAPIKEY)
@@ -35,7 +37,6 @@ def get_results():
                                      country='in')
     # print(news['articles'])
     return render_template('profiles/raiden.html', news=news['articles'])
-
 
 @app.route('/paul/')
 def paul():
@@ -96,16 +97,12 @@ def two_stars():
 def one_star():
     return render_template("ratings/one_star.html")
 
-
 @app.route('/databases/')
 def databases():
     return render_template("Databases/databases.html")
-
-
 @app.route('/search/')
 def search():
     return render_template("search.html")
-
 
 @app.route('/database1/')
 def database1():

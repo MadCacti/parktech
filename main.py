@@ -1,11 +1,12 @@
 # import "packages" from flask
-import json
 
 from flask import Flask, render_template, request
 from newsapi.newsapi_client import NewsApiClient
-import requests
-# from crud.app_crud import crud.app_crud
-#app.register_blueprint(app_crud)
+import requests, json
+from __init__ import app
+
+from mortencrud.app_crud import app_crud
+app.register_blueprint(app_crud)
 
 # create a Flask instance
 app = Flask(__name__)

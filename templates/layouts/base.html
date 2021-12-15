@@ -6,7 +6,37 @@
     <link rel="stylesheet" href="/static/css/main.css" type="text/css">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
 
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-firestore.js"></script>
+    <script>
+        const config = {
+            apiKey: "AIzaSyBisdbzYucwEc0Rxwl5QuMdGZt-V7XisNA",
+            authDomain: "park-tech1.firebaseapp.com",
+            projectId: "park-tech1",
+            storageBucket: "park-tech1.appspot.com",
+            messagingSenderId: "279797473683",
+            appId: "1:279797473683:web:90a67e50dbb85be60d4866",
+            measurementId: "G-T9K2GDHBEN"
+        };
+        if (firebase.apps.length === 0) {
+            firebase.initializeApp(config);
+        }
+        const auth = firebase.auth();
+        auth.onAuthStateChanged(function(user) {
+
+            if (user) {
+            } else {
+                window.location.pathname = "/login";
+            }
+
+        });
+        function logout() {
+            auth.signOut();
+        }
+    </script>
     {% block meta %}{% endblock %}
    <style>
        body { height: 100vh; }

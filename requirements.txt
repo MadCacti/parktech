@@ -2,3 +2,6 @@ Flask
 newsapi-python
 newsapi
 firebase_admin
+flask_restful
+flask_sqlalchemy
+flask_migrate

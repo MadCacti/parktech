@@ -114,12 +114,12 @@ def login():
     return render_template("login.html")
 
 
-@app.route('register')
+@app.route('/register/')
 def register():
     return render_template("register.html")
 
 
-@app.route('error')
+@app.route('/error/')
 def error():
     return render_template("error.html")
 

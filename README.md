@@ -69,3 +69,8 @@ Week-3
 ===============
 [Week 3 Issue](https://github.com/MadCacti/PARK-tech/issues/12)
 
+Commit | Person | Description
+------ | ------ | -----------
+[Add User System](https://github.com/MadCacti/PARK-tech/commit/8eba64c5dee853098b58326ab36efd40b0122f2e) | Raiden | Add a login system for users, still need to update base.html for layout of buttons to navigate. Took quite awhile, firebase can be shown on request.
+[Finalize Cursor](https://github.com/MadCacti/PARK-tech/commits/main?author=Paul-D6) | Kurtis | Finished finalizing a design for the cursor while group gets used to implementing/using databases.
+[Databases](https://github.com/MadCacti/PARK-tech/commit/7fbcc86efb7ca53b5f56518a7864b5c280b81dbb)| Kurtis | Add the databases, can be used in near future, but need to discuss w/ team.
